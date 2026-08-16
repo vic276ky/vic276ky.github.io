@@ -8,3 +8,16 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+const text = "Cybersecurity Enthusiast | Engineer";
+const typingElement = document.querySelector('.typing');
+let index = 0;
+
+function type() {
+    if (index < text.length) {
+        typingElement.textContent += text[index];
+        index++;
+        setTimeout(type, 80);
+    }
+}
+
+type();

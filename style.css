@@ -135,3 +135,25 @@ section.visible {
         padding: 40px 16px;
     }
 }
+.header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #00ff99;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+.typing {
+    border-right: 2px solid #00ff99;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 18px;
+    color: #aaaaaa;
+}
