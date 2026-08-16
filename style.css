@@ -118,3 +118,20 @@ section.visible {
     opacity: 1;
     transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    section {
+        padding: 40px 16px;
+    }
+}
