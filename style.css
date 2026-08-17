@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	background-color: transparent;
 }
 html {
     scroll-behavior: smooth;
@@ -36,16 +37,18 @@ h1 {
     font-size: 48px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #00ff99;
+    color: #03a062;
+	min-width: 300px;
 }
 h2 {
     font-size: 28px;
-    color: #00ff99;
+    color: #03a062;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 30px;
-    border-bottom: 1px solid #00ff99;
+    border-bottom: 1px solid #03a062;
     padding-bottom: 10px;
+	min-width: 300px;
 }
 p {
     text-align: center;
@@ -58,7 +61,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #00ff99;
+    border-bottom: 1px solid #03a062;
 }
 nav ul {
     list-style: none;
@@ -82,17 +85,17 @@ nav ul li a {
     text-transform: uppercase;
 }
 nav ul li a:hover {
-    color: #00ff99;
+    color: #03a062;
 }
 section div {
     background-color: #111111;
-    border: 1px solid #00ff99;
+    border: 1px solid #03a062;
     border-radius: 8px;
     padding: 24px;
     margin-bottom: 20px;
 }
 section div h3 {
-    color: #00ff99;
+    color: #03a062;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -104,7 +107,7 @@ footer {
     text-align: center;
     padding: 30px 20px;
     background-color: #111111;
-    border-top: 1px solid #00ff99;
+    border-top: 1px solid #03a062;
     color: #aaaaaa;
     font-size: 14px;
 }
@@ -143,17 +146,49 @@ section.visible {
     gap: 40px;
 }
 .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     border-radius: 12px;
-    border: 3px solid #00ff99;
-    margin-bottom: 20px;
-    object-fit: cover;
+    border: 3px solid #03a062;
+    margin-bottom: 10px;
+    object-fit: fill;
+	flex-shrink: 0;
 }
+
 .typing {
-    border-right: 2px solid #00ff99;
     white-space: nowrap;
     overflow: hidden;
     font-size: 18px;
     color: #aaaaaa;
+    display: inline-block;
+    border: none;
+	opacity: 0.9;
+}
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+.contact-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 30px;
+}
+
+.contact-icons a {
+    color: #00ff99;
+    font-size: 64px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    width: fit-content;
+}
+
+.contact-icons a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
 }
