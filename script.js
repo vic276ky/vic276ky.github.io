@@ -105,8 +105,8 @@ function repeatLeet(element, originalText) {
 }
 
 // Apply leet to name
-const nameElement = document.querySelector('h1');
-repeatLeet(nameElement, "VIGNESH R");
+// const nameElement = document.querySelector('h1');
+// repeatLeet(nameElement, "VIGNESH R");
 
 // Apply leet to all section headings
 const headings = document.querySelectorAll('h2');
