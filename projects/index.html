@@ -1,30 +1,37 @@
-<!-- PROJECTS PAGE -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Projects</title>
-  <link rel="stylesheet" href="/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Vignesh R</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="/style.css">
 </head>
+<body>
+
+<div id="boot-overlay"></div>
+
 <header>
-    <div class="header-content">
-        <img src="/profile.jpg" alt="Vignesh R" class="profile-img">
-        <div class="header-text">
-            <h1>Vignesh R</h1>
-            <p class="typing"></p>
-        </div>
+  <div class="header-content">
+    <img src="/profile.jpg" alt="Vignesh R" class="profile-img">
+    <div class="header-text">
+      <h1>Vignesh <span class="glyph">R</span></h1>
+      <p><span class="typing"></span></p>
     </div>
+  </div>
 </header>
+
 <nav>
 <ul>
 <li><a href="/home">Home</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="/home#about">About</a></li>
+<li><a href="/skills">Skills</a></li>
+<li><a href="/projects">Projects</a></li>
 </ul>
 </nav>
-<body>
-<section>
+
+<section id="projects">
 <h2>Projects</h2>
 <div>
 <h3>Acoustic Drone Detection</h3>
@@ -39,9 +46,24 @@
     <p>Active participant in Capture The Flag competitions. Reached the finals of Pecan+ PALS CTF conducted at IIT Madras, competing against teams from across the country.</p>
 </div>
 </section>
+
 <footer>
+<p>REACH OUT TO ME</p>
+<div class="contact-icons">
+    <a href="mailto:vigneshvickygr27@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://github.com/vic276ky" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/vignesh-r-264366250/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
     <p>© 2026 Vignesh R. All rights reserved.</p>
 </footer>
-    <script src="/script.js"></script>
-	<canvas id="matrix"></canvas>
+
+<canvas id="matrix"></canvas>
+<script src="/script.js"></script>
 </body>
+</html>

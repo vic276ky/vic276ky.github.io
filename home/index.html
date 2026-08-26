@@ -1,69 +1,74 @@
-<!-- PORTFOLIO PAGE -->
+<!-- PORTFOLIO 2.0 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>portfolio</title>
+<title>Vignesh R — Portfolio</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<header>
-    <div class="header-content">
-        <img src="/profile.jpg" alt="Vignesh R" class="profile-img">
-        <div class="header-text">
-            <h1>Vignesh R</h1>
-            <p class="typing"></p>
-        </div>
+<div id="password-gate">
+  <div class="gate-inner">
+    <p class="gate-line">// restricted access — authentication required</p>
+    <p class="gate-line">enter access key to continue:</p>
+    <div class="gate-input-row">
+      <span class="gate-prompt">&gt;</span>
+      <input type="password" id="gate-input" class="gate-input" autocomplete="off" spellcheck="false" autofocus>
+      <span class="gate-cursor"></span>
     </div>
+    <p class="gate-error" id="gate-error"></p>
+  </div>
+</div>
+<div id="boot-overlay"></div>
+
+<header>
+  <div class="header-content">
+    <img src="/profile.jpg" alt="Vignesh R" class="profile-img">
+    <div class="header-text">
+      <h1>Vignesh <span class="glyph">R</span></h1>
+      <p><span class="typing"></span></p>
+    </div>
+  </div>
 </header>
+
 <nav>
 <ul>
 <li><a href="/home">Home</a></li>
-<li><a href="/home/#about">About</a></li>
+<li><a href="/home#about">About</a></li>
 <li><a href="/skills">Skills</a></li>
 <li><a href="/projects">Projects</a></li>
-<li><a href="/home/#contact">Contact</a></li>
 </ul>
 </nav>
-<section>
+
+<section id="about">
 <h2>About Me</h2>
 <div>
 <p>Implementation and Solution Support Engineer with 2+ years of experience in system implementation, incident response, and enterprise solution support. Holding a Bachelor of Engineering in Electronics and Communication Engineering, with a strong foundation in systems architecture, networking, and analytical problem solving. A driven cybersecurity enthusiast with practical industry exposure and a research-oriented mindset, committed to advancing expertise at the intersection of engineering and cybersecurity.</p>
 </div>
 </section>
-<section>
-<h2>Contact</h2>
-<div class="contact-icons">
-    <a href="mailto:vigneshvickygr27@gmail.com">
-        <i class="fas fa-envelope"></i>
-    </a>
-    <a href="https://github.com/vic276ky" target="_blank">
-        <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/vignesh-r-264366250/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-    </a>
-</div>
-</section>
+
 <footer>
-<p>Reach out to me ;)</p>
+<p>REACH OUT TO ME</p>
 <div class="contact-icons">
-    <a href="mailto:vigneshvickygr27@gmail.com">
+    <a href="mailto:vigneshvickygr27@gmail.com" aria-label="Email">
         <i class="fas fa-envelope"></i>
     </a>
-    <a href="https://github.com/vic276ky" target="_blank">
+    <a href="https://github.com/vic276ky" target="_blank" rel="noopener" aria-label="GitHub">
         <i class="fab fa-github"></i>
     </a>
-    <a href="https://www.linkedin.com/in/vignesh-r-264366250/" target="_blank">
+    <a href="https://www.linkedin.com/in/vignesh-r-264366250/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
     </a>
 </div>
-    <p>© 2026 Vignesh R. All rights reserved.</p>
+<p>© 2026 Vignesh R. All rights reserved.</p>
 </footer>
-<script src="/script.js"></script>
+
 <canvas id="matrix"></canvas>
-</body>	
+<script src="/script.js"></script>
+</body>
+
+</html>
