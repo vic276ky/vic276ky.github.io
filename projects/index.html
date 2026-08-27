@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  (function() {
+    if (localStorage.getItem('vr_theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects — Vignesh R</title>
@@ -11,8 +18,42 @@
 <body>
 
 <div id="boot-overlay"></div>
-
+<div id="theme-modal" class="theme-modal">
+  <div class="theme-modal-inner">
+    <p class="theme-modal-eyebrow">select interface mode</p>
+    <div class="theme-modal-switch-row">
+      <label class="theme-switch theme-switch--large">
+        <input type="checkbox" id="theme-modal-input">
+        <span class="switch-track">
+          <span class="switch-thumb">
+            <span class="switch-icon icon-dark">
+    <i class="fas fa-user-secret"></i>
+</span>
+            <span class="switch-icon icon-light">
+    <i class="fas fa-sun"></i>
+</span>
+          </span>
+        </span>
+      </label>
+    </div>
+    <p class="theme-modal-status" id="theme-modal-status">BLACK HAT MODE - DARK</p>
+    <button id="theme-modal-ok" class="view-btn theme-modal-ok">OK</button>
+  </div>
+</div>
 <header>
+<label class="theme-switch" title="Toggle light / dark mode">
+  <input type="checkbox" id="theme-switch-input">
+  <span class="switch-track">
+    <span class="switch-thumb">
+      <span class="switch-icon icon-dark">
+    <i class="fas fa-user-secret" style="font-size:12px"></i>
+</span>
+      <span class="switch-icon icon-light">
+    <i class="fas fa-sun" style="font-size:12px"></i>
+</span>
+    </span>
+  </span>
+</label>
   <div class="header-content">
     <img src="/profile.jpg" alt="Vignesh R" class="profile-img">
     <div class="header-text">
@@ -25,7 +66,6 @@
 <nav>
 <ul>
 <li><a href="/home">Home</a></li>
-<li><a href="/home#about">About</a></li>
 <li><a href="/skills">Skills</a></li>
 <li><a href="/projects">Projects</a></li>
 </ul>

@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  (function() {
+    if (localStorage.getItem('vr_theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vignesh R — Portfolio</title>
@@ -24,8 +31,42 @@
   </div>
 </div>
 <div id="boot-overlay"></div>
-
+<div id="theme-modal" class="theme-modal">
+  <div class="theme-modal-inner">
+    <p class="theme-modal-eyebrow">select interface mode</p>
+    <div class="theme-modal-switch-row">
+      <label class="theme-switch theme-switch--large">
+        <input type="checkbox" id="theme-modal-input">
+        <span class="switch-track">
+          <span class="switch-thumb">
+            <span class="switch-icon icon-dark">
+    <i class="fas fa-user-secret"></i>
+</span>
+            <span class="switch-icon icon-light">
+    <i class="fas fa-sun"></i>
+</span>
+          </span>
+        </span>
+      </label>
+    </div>
+    <p class="theme-modal-status" id="theme-modal-status">BLACK HAT MODE - DARK</p>
+    <button id="theme-modal-ok" class="view-btn theme-modal-ok">OK</button>
+  </div>
+</div>
 <header>
+<label class="theme-switch" title="Toggle light / dark mode">
+  <input type="checkbox" id="theme-switch-input">
+  <span class="switch-track">
+    <span class="switch-thumb">
+      <span class="switch-icon icon-dark">
+    <i class="fas fa-user-secret" style="font-size:12px"></i>
+</span>
+      <span class="switch-icon icon-light">
+    <i class="fas fa-sun" style="font-size:12px"></i>
+</span>
+    </span>
+  </span>
+</label>
   <div class="header-content">
     <img src="/profile.jpg" alt="Vignesh R" class="profile-img">
     <div class="header-text">
@@ -39,6 +80,8 @@
 <ul>
 <li><a href="/home">Home</a></li>
 <li><a href="/home#about">About</a></li>
+<li><a href="/home#experience">Experience</a></li>
+<li><a href="/home#education">Education</a></li>
 <li><a href="/skills">Skills</a></li>
 <li><a href="/projects">Projects</a></li>
 </ul>
@@ -50,7 +93,38 @@
 <p>Implementation and Solution Support Engineer with 2+ years of experience in system implementation, incident response, and enterprise solution support. Holding a Bachelor of Engineering in Electronics and Communication Engineering, with a strong foundation in systems architecture, networking, and analytical problem solving. A driven cybersecurity enthusiast with practical industry exposure and a research-oriented mindset, committed to advancing expertise at the intersection of engineering and cybersecurity.</p>
 </div>
 </section>
+<section id="experience">
+<h2>Experience</h2>
+<div>
+    <h3>Implementation &amp; Solution Support — Odyssey Technologies Ltd</h3>
+    <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 12px; margin-bottom: 10px;">April 2025 — Present</p>
+    <ul>
+        <li>Developed in-depth product expertise and provided implementation and solution support across client environments.</li>
+        <li>Analysed application/system logs, investigated incidents, and performed root-cause analysis to resolve technical issues.</li>
+        <li>Participated in incident response and issue resolution, collaborating with teams to diagnose and implement fixes within timelines.</li>
+    </ul>
+</div>
+<div>
+    <h3>WordPress Developer — LICET</h3>
+    <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 12px; margin-bottom: 10px;">3 Months Internship</p>
+    <p>Designed and enhanced the user experience and functionality of LICET College's official website.</p>
+</div>
+</section>
 
+<section id="education">
+<h2>Education</h2>
+<div>
+    <h3>B.E., Electronics &amp; Communication Engineering</h3>
+    <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 12px; margin-bottom: 10px;">2021 — 2025</p>
+    <p>Loyola-ICAM College of Engineering and Technology, Chennai — CGPA: 7.47 (8 Semesters)</p>
+</div>
+<div>
+    <h3>SSLC &amp; HSC</h3>
+    <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 12px; margin-bottom: 10px;">2018 — 2021</p>
+    <p>Santhome Higher Secondary School, Mylapore — SSLC: 90.4%</p>
+    <p>St. John's Matriculation Higher Secondary School, Mandaveli — HSC: 92.68%</p>
+</div>
+</section>
 <footer>
 <p>REACH OUT TO ME</p>
 <div class="contact-icons">

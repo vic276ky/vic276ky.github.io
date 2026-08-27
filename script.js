@@ -5,11 +5,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initPasswordGate();
+  // initBootSequence();
   initMatrix();
   initTyping();
   initScrollReveal();
-  initGlitchPulse();
+  // initGlitchPulse();
   markActiveNavLink();
+  initThemeToggle();
 });
 
 function initPasswordGate() {
@@ -57,16 +59,16 @@ function initBootSequence() {
   if (!overlay) return;
 
   if (sessionStorage.getItem('vr_booted')) {
-    overlay.remove();
-    return;
-  }
+  overlay.remove();
+  initThemeModal();
+  return;
+}
 
   const lines = [
     'establishing secure session...',
-    'verifying operator credentials... <span class="ok">OK</span>',
-    'mounting /portfolio ...',
+    'verifying user ... <span class="ok">OK</span>',
     'loading modules: about, skills, projects ...',
-    'ACCESS GRANTED'
+	'mounting /portfolio ...'
   ];
 
 overlay.innerHTML = '<div class="boot-inner"></div>';
@@ -89,7 +91,10 @@ inner.lastChild.appendChild(cursor);   // was: overlay.lastChild
 setTimeout(() => {
   overlay.classList.add('boot-hidden');
   sessionStorage.setItem('vr_booted', '1');
-  setTimeout(() => overlay.remove(), 600);
+  setTimeout(() => {
+    overlay.remove();
+    initThemeModal();
+  }, 600);
 }, delay + 1200);   // longer pause on "ACCESS GRANTED" before fading out
 }
 /* ---------------- Matrix rain background ---------------- */
@@ -176,19 +181,19 @@ function initScrollReveal() {
   sections.forEach(section => observer.observe(section));
 }
 
-/* ---------------- Occasional glitch pulse on the name ---------------- */
+// /* ---------------- Occasional glitch pulse on the name ---------------- */
 
-function initGlitchPulse() {
-  const name = document.querySelector('h1');
-  if (!name) return;
+// function initGlitchPulse() {
+  // const name = document.querySelector('h1');
+  // if (!name) return;
 
-  function pulse() {
-    name.classList.add('glitching');
-    setTimeout(() => name.classList.remove('glitching'), 280);
-    setTimeout(pulse, 6000 + Math.random() * 6000);
-  }
-  setTimeout(pulse, 4000);
-}
+  // function pulse() {
+    // name.classList.add('glitching');
+    // setTimeout(() => name.classList.remove('glitching'), 280);
+    // setTimeout(pulse, 6000 + Math.random() * 6000);
+  // }
+  // setTimeout(pulse, 4000);
+// }
 
 /* ---------------- Highlight current page in nav ---------------- */
 
@@ -200,4 +205,63 @@ function markActiveNavLink() {
       a.classList.add('active');
     }
   });
+}
+
+// theme toggle switch
+
+function initThemeToggle() {
+  const isLightNow = document.documentElement.getAttribute('data-theme') === 'light';
+  document.querySelectorAll('.theme-switch input').forEach(inp => {
+    inp.checked = isLightNow;
+  });
+
+  function applyTheme(isLight, persist) {
+    if (isLight) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    document.querySelectorAll('.theme-switch input').forEach(inp => {
+      inp.checked = isLight;
+    });
+    if (persist) {
+      localStorage.setItem('vr_theme', isLight ? 'light' : 'dark');
+    }
+  }
+
+  window.__vrApplyTheme = applyTheme;
+
+  const corner = document.getElementById('theme-switch-input');
+  if (corner) {
+    corner.addEventListener('change', () => applyTheme(corner.checked, true));
+  }
+}
+
+function initThemeModal() {
+  const modal = document.getElementById('theme-modal');
+  if (!modal || localStorage.getItem('vr_theme')) return; // only ever shown once, browser-wide
+
+  const modalInput = document.getElementById('theme-modal-input');
+  const status = document.getElementById('theme-modal-status');
+  const okBtn = document.getElementById('theme-modal-ok');
+
+  function updateStatus() {
+    status.textContent = modalInput.checked
+      ? 'WHITE HAT MODE — LIGHT'
+      : 'BLACK HAT MODE — DARK';
+  }
+
+  modalInput.addEventListener('change', () => {
+    window.__vrApplyTheme(modalInput.checked, false); // live preview only
+    updateStatus();
+  });
+
+  okBtn.addEventListener('click', () => {
+    window.__vrApplyTheme(modalInput.checked, true); // now save it
+    modal.classList.remove('modal-visible');
+    setTimeout(() => modal.remove(), 400);
+  });
+
+  updateStatus();
+  modal.classList.add('modal-visible');
 }
