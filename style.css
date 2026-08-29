@@ -414,11 +414,11 @@ nav ul li a {
   transition: color 0.25s ease;
 }
 
-nav ul li a::before {
-  content: "./";
-  color: var(--text-faint);
-  margin-right: 2px;
-}
+/* nav ul li a::before { */
+  /* content: "./"; */
+  /* color: var(--text-faint); */
+  /* margin-right: 2px; */
+/* } */
 
 nav ul li a::after {
   content: "";
@@ -476,11 +476,11 @@ h2 {
   gap: 12px;
 }
 
-h2::before {
-  content: "//";
-  color: var(--accent);
-  font-weight: 700;
-}
+/* h2::before { */
+  /* content: "//"; */
+  /* color: var(--accent); */
+  /* font-weight: 700; */
+/* } */
 
 h2::after {
   content: "";

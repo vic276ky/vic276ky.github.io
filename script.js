@@ -4,8 +4,8 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initPasswordGate();
-  // initBootSequence();
+  // initPasswordGate();
+  initBootSequence();
   initMatrix();
   initTyping();
   initScrollReveal();
@@ -14,43 +14,42 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
 });
 
-function initPasswordGate() {
-  const gate = document.getElementById('password-gate');
-  if (!gate) { initBootSequence(); return; }
+// function initPasswordGate() {
+  // const gate = document.getElementById('password-gate');
+  // if (!gate) { initBootSequence(); return; }
 
-  // already unlocked earlier this session — skip straight to boot sequence
-  if (sessionStorage.getItem('vr_authed')) {
-    gate.remove();
-    initBootSequence();
-    return;
-  }
+  // if (sessionStorage.getItem('vr_authed')) {
+    // gate.remove();
+    // initBootSequence();
+    // return;
+  // }
 
-  const ACCESS_KEY = 'letmein'; // change this to whatever key you want
-  const input = document.getElementById('gate-input');
-  const error = document.getElementById('gate-error');
-  const inner = gate.querySelector('.gate-inner');
+  // const ACCESS_KEY = 'letmein'; // change this to whatever key you want
+  // const input = document.getElementById('gate-input');
+  // const error = document.getElementById('gate-error');
+  // const inner = gate.querySelector('.gate-inner');
 
-  input.focus();
+  // input.focus();
 
-  input.addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter') return;
-    const value = input.value.trim().toLowerCase();
+  // input.addEventListener('keydown', (e) => {
+    // if (e.key !== 'Enter') return;
+    // const value = input.value.trim().toLowerCase();
 
-    if (value === ACCESS_KEY) {
-      gate.classList.add('gate-hidden');
-      sessionStorage.setItem('vr_authed', '1');
-      setTimeout(() => {
-        gate.remove();
-        initBootSequence();
-      }, 500);
-    } else {
-      error.textContent = 'ACCESS DENIED — invalid key';
-      inner.classList.add('shake');
-      input.value = '';
-      setTimeout(() => inner.classList.remove('shake'), 350);
-    }
-  });
-}
+    // if (value === ACCESS_KEY) {
+      // gate.classList.add('gate-hidden');
+      // sessionStorage.setItem('vr_authed', '1');
+      // setTimeout(() => {
+        // gate.remove();
+        // initBootSequence();
+      // }, 500);
+    // } else {
+      // error.textContent = 'ACCESS DENIED — invalid key';
+      // inner.classList.add('shake');
+      // input.value = '';
+      // setTimeout(() => inner.classList.remove('shake'), 350);
+    // }
+  // });
+// }
 
 /* ---------------- Boot sequence (plays once per browser session) ---------------- */
 
@@ -65,10 +64,8 @@ function initBootSequence() {
 }
 
   const lines = [
-    'establishing secure session...',
-    'verifying user ... <span class="ok">OK</span>',
-    'loading modules: about, skills, projects ...',
-	'mounting /portfolio ...'
+    'loading modules: about, skills, projects...',
+	'mounting portfolio site...'
   ];
 
 overlay.innerHTML = '<div class="boot-inner"></div>';
@@ -247,8 +244,8 @@ function initThemeModal() {
 
   function updateStatus() {
     status.textContent = modalInput.checked
-      ? 'WHITE HAT MODE — LIGHT'
-      : 'BLACK HAT MODE — DARK';
+      ? 'WHITE HAT MODE - LIGHT'
+      : 'BLACK HAT MODE - DARK';
   }
 
   modalInput.addEventListener('change', () => {
@@ -264,4 +261,8 @@ function initThemeModal() {
 
   updateStatus();
   modal.classList.add('modal-visible');
+}
+
+function sendMail() {
+    window.open('https://mail.google.com/mail/?view=cm&to=vigneshvickygr27@gmail.com&su=');
 }
