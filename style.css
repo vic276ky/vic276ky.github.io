@@ -855,7 +855,7 @@ a:focus-visible, .cert-card:focus-visible {
   width: 58px;
   height: 28px;
   background: var(--bg-raised);
-  border: 1px solid var(--border);
+  border: 1px solid #00ff9c;
   border-radius: 100px;
   position: relative;
   transition: background-color 0.3s ease, border-color 0.3s ease;
