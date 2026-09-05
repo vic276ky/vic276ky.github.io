@@ -1,3 +1,4 @@
+<!-- PROJECTS PAGE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +19,11 @@
 <body>
 
 <div id="boot-overlay"></div>
+
+<div id="zoom-overlay" class="zoom-overlay">
+  <img id="zoom-overlay-img" src="" alt="">
+</div>
+
 <div id="theme-modal" class="theme-modal">
   <div class="theme-modal-inner">
     <p class="theme-modal-eyebrow">select interface mode</p>
@@ -67,15 +73,21 @@
 <ul>
 <li><a href="/home">Home</a></li>
 <li><a href="/skills">Skills</a></li>
-<li><a href="/projects">Projects</a></li>
+<li><a href="#cybersecurity">Cybersecurity</a></li>
+<li><a href="#others">Others</a></li>
 </ul>
 </nav>
 
-<section id="projects">
-<h2>Projects</h2>
+<section id="cybersecurity">
+<h2>Cybersecurity Projects</h2>
 <div>
-<h3>Acoustic Drone Detection</h3>
-<p>Developed a system to identify and localize unmanned aerial vehicles using acoustic signatures. Contributed across signal processing, hardware configuration, algorithm development and testing.</p>
+<h3>Argus - Network Anomaly Detector</h3>
+<p>ARGUS, a real-time network monitoring tool that captures packets, detects port scans, unusual traffic, monitors DNS requests, checks IPs using AbuseIPDB and visualizes activity through a live dashboard. Learned practical network analysis, detection and monitoring. Named it after the greek mythological creature known as the "All Knowing".</p>
+<div class="zoom-media">
+<img src="/images/argus_not_detected.png" alt="Argus Not Detected" class="zoomable">
+<img src="/images/argus_detected.png" alt="Argus Detected" class="zoomable">
+</div>
+<a href="https://github.com/vic276ky/argus--network-anomaly-detector" target="_blank" class="view-repo-btn">Visit GitHub Repo</a>
 </div>
 <div>
     <h3>Gyrospoon</h3>
@@ -84,6 +96,41 @@
 <div>
     <h3>CTF Competitions</h3>
     <p>Active participant in Capture The Flag competitions. Reached the finals of Pecan+ PALS CTF conducted at IIT Madras, competing against teams from across the country.</p>
+	<div class="certificate-media">
+	<img src="/images/project_presentation.jpeg" alt="Acoustic Drone Detection" class="certificate-img">
+	<img src="/images/project_presentation.jpeg" alt="Acoustic Drone Detection" class="certificate-img">
+	</div>
+</div>
+</section>
+
+<section id="others">
+<h2>Other Projects</h2>
+<div>
+<h3>Acoustic Drone Detection</h3>
+<p>Developed a system to identify and localize unmanned aerial vehicles using acoustic signatures. Contributed across signal processing, hardware configuration, algorithm development and testing.</p>
+<div class="project-media">
+<img src="/images/project_presentation.jpeg" alt="Acoustic Drone Detection" class="project-img">
+<div class="project-video">
+    <video controls muted loop playsinline preload="metadata" poster="/images/drone_demo.jpg">
+        <source src="/images/drone_video.mp4" type="video/mp4">
+        Your browser doesn't support embedded video. <a href="/videos/drone-demo.mp4">Download the demo instead</a>.
+    </video>
+</div>
+<img src="/images/project_presentation.jpeg" alt="Acoustic Drone Detection" class="project-img">
+</div>
+<a href="https://github.com/vic276ky/Acoustic-Drone-Detection" target="_blank" class="view-repo-btn">Visit GitHub Repo</a>
+</div>
+<div>
+    <h3>Gyrospoon</h3>
+    <p>Designed an assistive device to reduce hand tremors for people living with Parkinson's disease using counter motion mechanics, improving ease of daily activities.</p>
+</div>
+<div>
+    <h3>CTF Competitions</h3>
+    <p>Active participant in Capture The Flag competitions. Reached the finals of Pecan+ PALS CTF conducted at IIT Madras, competing against teams from across the country.</p>
+	<div class="certificate-media">
+	<img src="/images/project_presentation.jpeg" alt="Acoustic Drone Detection" class="certificate-img">
+	<img src="/images/project_presentation.jpeg" alt="Acoustic Drone Detection" class="certificate-img">
+	</div>
 </div>
 </section>
 

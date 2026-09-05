@@ -1,7 +1,4 @@
-/* ============================================================
-   VIGNESH R — SECURITY PORTFOLIO
-   Design language: operator console / terminal-native
-   ============================================================ */
+/* MAIN STYLESHEET */
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -10,6 +7,7 @@
   --grid-line: rgba(0, 255, 156, 0.035);
   --nav-bg: rgba(10, 12, 16, 0.88);
   --header-bg: #0a0c10;
+  --footer-bg: #0a0c10;
   --bg:            #07080a;
   --bg-raised:     #0d1016;
   --bg-panel:      rgba(13, 18, 22, 0.72);
@@ -54,6 +52,7 @@
   --grid-line:     rgba(3, 160, 98, 0.05);
   --nav-bg:        rgba(255, 255, 255, 0.88);
   --header-bg:     #ffffff;
+  --footer-bg:     #ffffff;
 }
 
 [data-theme="light"] #matrix {
@@ -550,7 +549,8 @@ section ul li::before {
   align-items: center;
   justify-content: center;
   gap: 60px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .contact-icons a {
@@ -576,9 +576,9 @@ section ul li::before {
 footer {
   text-align: center;
   padding: 40px 20px;
-  background: #0a0c10;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 255, 156, 0.07), transparent 70%), var(--header-bg);
   border-top: 1px solid var(--border);
-  color: var(--header-bg);
+  color: var(--footer-bg);
   font-family: var(--font-mono);
   font-size: 12px;
 }
@@ -954,4 +954,179 @@ a:focus-visible, .cert-card:focus-visible {
   color: var(--accent);
   margin-bottom: 26px;
   min-height: 16px;
+}
+
+.project-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.project-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  border: 2px solid var(--border-bright);
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: grayscale(15%) contrast(1.05);
+  box-shadow: 0 0 0 1px rgba(0,255,156,0.15), 0 20px 50px -20px rgba(0,255,156,0.25);
+  transition: box-shadow 0.4s var(--ease);
+  margin: 20px;
+}
+
+.project-img:hover {
+  box-shadow: 0 0 0 1px var(--accent), 0 20px 60px -18px rgba(0,255,156,0.45);
+}
+
+.project-video {
+  width: 220px;
+  height: 220px;
+  margin-top: 18px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+  margin: 20px;
+}
+
+.project-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.project-video:hover {
+  box-shadow: 0 0 0 1px var(--accent), 0 20px 60px -18px rgba(0,255,156,0.45);
+}
+
+.view-repo-btn {
+  margin-top: 14px;
+  margin-left: 315px;
+  padding: 8px 18px;
+  border: 1px solid var(--accent-dim);
+  color: var(--accent);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align:center;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  padding-left: 20px; 
+  padding-right: 20px;
+}
+
+.view-repo-btn:hover {
+  background: var(--accent);
+  color: #04140c;
+  box-shadow: var(--glow);
+}
+
+.project-video video::-webkit-media-controls,
+.project-video video::-webkit-media-controls-panel,
+.project-video video::-webkit-media-controls-play-button,
+.project-video video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+.project-video video {
+  pointer-events: none; /* prevents click-to-pause/fullscreen entirely */
+}
+
+.certificate-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.certificate-img {
+  width: 330px;
+  height: 220px;
+  border-radius: 10px;
+  border: 2px solid var(--border-bright);
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: grayscale(15%) contrast(1.05);
+  box-shadow: 0 0 0 1px rgba(0,255,156,0.15), 0 20px 50px -20px rgba(0,255,156,0.25);
+  transition: box-shadow 0.4s var(--ease);
+  margin: 20px;
+}
+
+.certificate-img:hover {
+  box-shadow: 0 0 0 1px var(--accent), 0 20px 60px -18px rgba(0,255,156,0.45);
+}
+
+/* ============================== IMAGE ZOOM LIGHTBOX ============================== */
+
+.zoom-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.zoomable {
+  cursor: zoom-in;
+  transition: filter 0.3s ease;
+  width: 330px;
+  height: 220px;
+  border-radius: 10px;
+  border: 2px solid var(--border-bright);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.zoomable:hover {
+  filter: brightness(1.08);
+}
+
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 7, 10, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+.zoom-overlay.zoom-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.zoom-overlay img {
+  max-width: 82vw;
+  max-height: 82vh;
+  border-radius: 8px;
+  border: 1px solid var(--border-bright);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
+  transform: scale(0.85);
+  transition: transform 0.35s var(--ease);
+}
+
+.zoom-overlay.zoom-visible img {
+  transform: scale(1);
 }

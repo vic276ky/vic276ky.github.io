@@ -1,7 +1,4 @@
-/* ============================================================
-   VIGNESH R — SECURITY PORTFOLIO
-   Behavior layer
-   ============================================================ */
+/* MAIN JAVASCRIPT */
 
 document.addEventListener('DOMContentLoaded', () => {
   // initPasswordGate();
@@ -12,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // initGlitchPulse();
   markActiveNavLink();
   initThemeToggle();
+  initHoverVideos();
+  initImageZoom();
 });
 
 // function initPasswordGate() {
@@ -265,4 +264,43 @@ function initThemeModal() {
 
 function sendMail() {
     window.open('https://mail.google.com/mail/?view=cm&to=vigneshvickygr27@gmail.com&su=');
+}
+
+function initHoverVideos() {
+  document.querySelectorAll('.project-video video').forEach(video => {
+    const wrapper = video.closest('.project-video');
+
+    wrapper.addEventListener('mouseenter', () => {
+      video.currentTime = 0;
+      video.play();
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+}
+
+function initImageZoom() {
+  const overlay = document.getElementById('zoom-overlay');
+  const overlayImg = document.getElementById('zoom-overlay-img');
+  if (!overlay) return;
+
+  document.querySelectorAll('.zoomable').forEach(img => {
+    img.addEventListener('mouseenter', () => {
+      overlayImg.src = img.src;
+      overlayImg.alt = img.alt;
+      overlay.classList.add('zoom-visible');
+    });
+
+    img.addEventListener('mouseleave', () => {
+      overlay.classList.remove('zoom-visible');
+    });
+  });
+
+  // also close if the cursor moves over the enlarged image itself
+  overlay.addEventListener('mouseleave', () => {
+    overlay.classList.remove('zoom-visible');
+  });
 }
