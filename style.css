@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* -- palette -- */
   --grid-line: rgba(0, 255, 156, 0.035);
   --nav-bg: rgba(10, 12, 16, 0.88);
   --header-bg: #0a0c10;
@@ -23,16 +22,14 @@
   --text-dim:      #8592a0;
   --text-faint:    #4c5964;
 
-  /* -- type -- */
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
   --font-sans: 'Inter', 'Segoe UI', sans-serif;
 
-  /* -- fx -- */
   --glow: 0 0 18px rgba(0, 255, 156, 0.35);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ============================== LIGHT THEME ============================== */
+/* LIGHT THEME */
 
 [data-theme="light"] {
   --bg:            #f4f6f8;
@@ -106,7 +103,6 @@ body {
 }
 
 body::after {
-  /* scanline / vignette overlay */
   content: "";
   position: fixed;
   inset: 0;
@@ -211,8 +207,7 @@ a { color: inherit; }
   25% { transform: translateX(-8px); }
   75% { transform: translateX(8px); }
 }
-
-/* ============================== BOOT SEQUENCE ============================== */
+/* Boot Sequence */
 
 #boot-overlay {
   position: fixed;
@@ -264,7 +259,7 @@ a { color: inherit; }
   to { opacity: 1; }
 }
 
-/* ============================== HEADER ============================== */
+/*Header*/
 
 header {
   text-align: center;
@@ -379,7 +374,7 @@ h1.glitching {
   color: var(--accent-dim);
 }
 
-/* ============================== NAV ============================== */
+/*Nav*/
 
 nav {
   background: var(--nav-bg);
@@ -445,7 +440,7 @@ nav ul li a.active {
   color: var(--accent);
 }
 
-/* ============================== SECTIONS ============================== */
+/*Sections*/
 
 section {
   padding: 50px 20px;
@@ -542,7 +537,7 @@ section ul li::before {
   color: var(--accent);
 }
 
-/* ============================== CONTACT ============================== */
+/*Contact*/
 
 .contact-icons {
   display: flex;
@@ -583,7 +578,7 @@ footer {
   font-size: 12px;
 }
 
-/* ============================== CERT / TERMINAL CARDS ============================== */
+/*Cert / Terminal cards*/
 
 .cert-grid {
   display: grid;
@@ -706,9 +701,7 @@ footer {
   box-shadow: var(--glow);
 }
 
-/* ============================== HEX TOOL GRID ============================== */
-
-/* ============================== HEX TOOL GRID ============================== */
+/*Hex tool grid*/
 
 .hex-grid {
   display: flex;
@@ -780,7 +773,7 @@ footer {
   margin: 0;
 }
 
-/* ============================== MATRIX CANVAS ============================== */
+/* Matrix background */
 
 #matrix {
   position: fixed;
@@ -792,7 +785,7 @@ footer {
   opacity: 0.22;
 }
 
-/* ============================== RESPONSIVE ============================== */
+/*Responsive*/
 
 @media (max-width: 768px) {
   header { padding: 70px 20px 40px; }
@@ -833,7 +826,7 @@ a:focus-visible, .cert-card:focus-visible {
 @keyframes blink {
   50% { opacity: 0; }
 }
-/* ============================== THEME SWITCH ============================== */
+/*Theme switch*/
 
 .theme-switch {
   position: absolute;
@@ -897,7 +890,7 @@ a:focus-visible, .cert-card:focus-visible {
   .theme-switch { top: 14px; right: 14px; }
 }
 
-/* ============================== THEME PICKER MODAL ============================== */
+/* Theme picker */
 
 .theme-modal {
   position: fixed;
@@ -1035,7 +1028,7 @@ a:focus-visible, .cert-card:focus-visible {
 }
 
 .project-video video {
-  pointer-events: none; /* prevents click-to-pause/fullscreen entirely */
+  pointer-events: none; /* to prevent click-to-pause/fullscreen */
 }
 
 .certificate-media {
@@ -1063,7 +1056,7 @@ a:focus-visible, .cert-card:focus-visible {
   box-shadow: 0 0 0 1px var(--accent), 0 20px 60px -18px rgba(0,255,156,0.45);
 }
 
-/* ============================== IMAGE ZOOM LIGHTBOX ============================== */
+/* Image zoom*/
 
 .zoom-media {
   display: grid;

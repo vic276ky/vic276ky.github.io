@@ -1,4 +1,4 @@
-/* MAIN JAVASCRIPT */
+// MAIN JAVASCRIPT
 
 document.addEventListener('DOMContentLoaded', () => {
   // initPasswordGate();
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // });
 // }
 
-/* ---------------- Boot sequence (plays once per browser session) ---------------- */
+// Boot sequence (plays once per browser session)
 
 function initBootSequence() {
   const overlay = document.getElementById('boot-overlay');
@@ -76,13 +76,13 @@ lines.forEach((line, i) => {
   div.className = 'boot-line';
   div.style.animationDelay = delay + 'ms';
   div.innerHTML = (i === lines.length - 1 ? '<span class="glyph">&gt;</span> ' : '$ ') + line;
-  inner.appendChild(div);   // was: overlay.appendChild(div)
+  inner.appendChild(div);    
   delay += 1250;
 });
 
 const cursor = document.createElement('span');
 cursor.className = 'boot-cursor';
-inner.lastChild.appendChild(cursor);   // was: overlay.lastChild
+inner.lastChild.appendChild(cursor);   
 
 setTimeout(() => {
   overlay.classList.add('boot-hidden');
@@ -91,9 +91,9 @@ setTimeout(() => {
     overlay.remove();
     initThemeModal();
   }, 600);
-}, delay + 1200);   // longer pause on "ACCESS GRANTED" before fading out
+}, delay + 1200);  
 }
-/* ---------------- Matrix rain background ---------------- */
+// Matrix background
 
 function initMatrix() {
   const canvas = document.getElementById('matrix');
@@ -135,7 +135,7 @@ function initMatrix() {
   });
 }
 
-/* ---------------- Typing effect for header tagline ---------------- */
+ // Typing effect for header tagline 
 
 function initTyping() {
   const el = document.querySelector('.typing');
@@ -156,7 +156,6 @@ function initTyping() {
   type();
 }
 
-/* ---------------- Scroll-triggered section reveal ---------------- */
 
 function initScrollReveal() {
   const sections = document.querySelectorAll('section');
@@ -177,7 +176,6 @@ function initScrollReveal() {
   sections.forEach(section => observer.observe(section));
 }
 
-// /* ---------------- Occasional glitch pulse on the name ---------------- */
 
 // function initGlitchPulse() {
   // const name = document.querySelector('h1');
@@ -191,7 +189,6 @@ function initScrollReveal() {
   // setTimeout(pulse, 4000);
 // }
 
-/* ---------------- Highlight current page in nav ---------------- */
 
 function markActiveNavLink() {
   const path = window.location.pathname.replace(/\/$/, '') || '/home';
@@ -235,7 +232,7 @@ function initThemeToggle() {
 
 function initThemeModal() {
   const modal = document.getElementById('theme-modal');
-  if (!modal || localStorage.getItem('vr_theme')) return; // only ever shown once, browser-wide
+  if (!modal || localStorage.getItem('vr_theme')) return; 
 
   const modalInput = document.getElementById('theme-modal-input');
   const status = document.getElementById('theme-modal-status');
@@ -248,12 +245,12 @@ function initThemeModal() {
   }
 
   modalInput.addEventListener('change', () => {
-    window.__vrApplyTheme(modalInput.checked, false); // live preview only
+    window.__vrApplyTheme(modalInput.checked, false); 
     updateStatus();
   });
 
   okBtn.addEventListener('click', () => {
-    window.__vrApplyTheme(modalInput.checked, true); // now save it
+    window.__vrApplyTheme(modalInput.checked, true); 
     modal.classList.remove('modal-visible');
     setTimeout(() => modal.remove(), 400);
   });
@@ -299,7 +296,6 @@ function initImageZoom() {
     });
   });
 
-  // also close if the cursor moves over the enlarged image itself
   overlay.addEventListener('mouseleave', () => {
     overlay.classList.remove('zoom-visible');
   });
